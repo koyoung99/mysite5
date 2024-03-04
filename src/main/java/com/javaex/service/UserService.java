@@ -17,8 +17,29 @@ public class UserService {
 		System.out.println("UserService.exeLogin()");
 
 		UserVo authUser = userDao.userSelectByIdPw(userVo);
-		
+
 		return authUser;
 	}
+
+	// 회원가입
+	public int exeUserInsert(UserVo userVo) {
+		System.out.println("UserService.exeUserInsert()");
+
+		int count = userDao.userInsert(userVo);
+
+		return count;
+
+	}
+	
+	
+	public int exeModify(UserVo userVo) {
+		System.out.println("UserService.exeModify()");
+		
+		int count=userDao.userUpdate(userVo);
+		
+		return count;
+	}
+
+
 
 }
