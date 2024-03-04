@@ -3,18 +3,24 @@
 <mapper namespace="guestbook">
 
 	<select id="select" resultType="com.javaex.vo.GuestVo">
+	<![CDATA[
 		select no,name,password,content,regDate
 		from guestbook
+	]]>
 	</select>
 
 	<insert id="insert" parameterType="com.javaex.vo.GuestVo">
+		<![CDATA[
 		insert into guestbook
 		values(null, #{name}, #{password}, #{content}, now())
+	]]>
 	</insert>
 
 	<delete id="delete" parameterType="com.javaex.vo.GuestVo">
+	<![CDATA[
 		delete from guestbook
 		where password = #{password}
 		and no = #{no}
+	]]>
 	</delete>
 </mapper>
